@@ -509,6 +509,15 @@ h1{
   margin:0 0 12px!important;
 }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIINfQ3L4dR8hQ6v3sE2zQK5P7W7p0d5rQ=" crossorigin=""/>
+<style id="race-map-style">
+.race-map-section{margin-top:24px}
+.race-map-section h2{margin:0 0 10px}
+#race-map{height:500px;width:100%;border:1px solid #d7ddd6;border-radius:10px;overflow:hidden;background:#eef3ee}
+.race-map-note{margin-top:6px;font-size:11px;color:#666}
+.leaflet-popup-content{font:13px/1.4 Arial,Helvetica,sans-serif}
+</style>
 </head>
 <body>
 <main>
@@ -599,12 +608,12 @@ h1{
 <tr class="dist-marathon race-marathon"><td>3</td><td>15.09.2013</td><td>Московский марафон</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:59:06</b></td></tr>
 <tr class="dist-marathon race-marathon"><td>4</td><td>22.09.2013</td><td>Кросс-марафон «Ромашково»</td><td><span class="distance-pill marathon">марафон</span></td><td><b>5:50:37.8</b></td></tr>
 <tr class="dist-marathon race-marathon"><td>5</td><td>29.09.2013</td><td>37-й Космический марафон</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:32:42</b></td></tr>
-<tr class="dist-half race-half"><td>7</td><td>05.10.2013</td><td>Воронежский полумарафон</td><td><span class="distance-pill half">полумарафон</span></td><td><b>≈1:49:00</b></td></tr>
-<tr class="dist-ultra race-ultra"><td>8</td><td>12.10.2013</td><td>30 Miles Camomiles</td><td><span class="distance-pill ultra">50 км</span></td><td><b>6:05:50</b></td></tr>
-<tr class="dist-half race-half"><td>9</td><td>03.11.2013</td><td>IV Саратовский полумарафон</td><td><span class="distance-pill half">полумарафон</span></td><td><b>1:42:14</b></td></tr>
-<tr class="dist-marathon race-marathon"><td>10</td><td>10.11.2013</td><td>Осенний марафон МИЭТ</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:09:24</b></td></tr>
-<tr class="dist-marathon race-marathon"><td>11</td><td>07.12.2013</td><td>XIV Зеленоградский зимний марафон «БиМ»</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:24:47</b></td></tr>
-<tr class="dist-marathon race-marathon"><td>12</td><td>22.12.2013</td><td>Саратовский марафон</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:19:59</b></td></tr>
+<tr class="dist-half race-half"><td>6</td><td>05.10.2013</td><td>Воронежский полумарафон</td><td><span class="distance-pill half">полумарафон</span></td><td><b>≈1:49:00</b></td></tr>
+<tr class="dist-ultra race-ultra"><td>7</td><td>12.10.2013</td><td>30 Miles Camomiles</td><td><span class="distance-pill ultra">50 км</span></td><td><b>6:05:50</b></td></tr>
+<tr class="dist-half race-half"><td>8</td><td>03.11.2013</td><td>IV Саратовский полумарафон</td><td><span class="distance-pill half">полумарафон</span></td><td><b>1:42:14</b></td></tr>
+<tr class="dist-marathon race-marathon"><td>9</td><td>10.11.2013</td><td>Осенний марафон МИЭТ</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:09:24</b></td></tr>
+<tr class="dist-marathon race-marathon"><td>10</td><td>07.12.2013</td><td>XIV Зеленоградский зимний марафон «БиМ»</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:24:47</b></td></tr>
+<tr class="dist-marathon race-marathon"><td>11</td><td>22.12.2013</td><td>Саратовский марафон</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:19:59</b></td></tr>
 </tbody></table>
 </section>
 
@@ -667,17 +676,23 @@ h1{
 <tr class="dist-ultra race-ultra"><td>10</td><td>23.05.2015</td><td>Сверхмарафон «70 лет Великой Победы»</td><td><span class="distance-pill ultra">70 км</span></td><td><b>6:54:25</b></td></tr>
 <tr class="dist-half race-half"><td>11</td><td>31.05.2015</td><td>Пробег в честь праздника Святителя Алексия</td><td><span class="distance-pill half">полумарафон</span></td><td><b>1:40:03</b></td></tr>
 <tr class="dist-15 race-15"><td>12</td><td>17.06.2015</td><td>Путяевский Лабиринт — 1 этап</td><td><span class="distance-pill fifteen">15 км</span></td><td><b>1:01:04</b></td></tr>
-<tr class="dist-10 race-10"><td>13</td><td>18.07.2015</td><td>Московский Марафон: Ночной забег</td><td><span class="distance-pill fifteen">10 км</span></td><td><b>0:39:33</b></td></tr>
-<tr class="dist-15 race-15"><td>14</td><td>22.07.2015</td><td>Путяевский Лабиринт — 2 этап</td><td><span class="distance-pill fifteen">15 км</span></td><td><b>1:13:19</b></td></tr>
-<tr class="dist-half race-half"><td>15</td><td>25.07.2015</td><td>Полумарафон 21andMe</td><td><span class="distance-pill half">полумарафон</span></td><td><b>1:44:31</b></td></tr>
-<tr class="dist-ultra race-ultra"><td>16</td><td>02.08.2015</td><td>Golden Ring 100 Ultra Trail</td><td><span class="distance-pill ultra">30 км</span></td><td><b>2:48:42</b></td></tr>
-<tr class="dist-half race-half"><td>17</td><td>16.08.2015</td><td>Музыкальный полумарафон</td><td><span class="distance-pill half">полумарафон</span></td><td><b>1:23:09</b></td></tr>
-<tr class="dist-15 race-15"><td>18</td><td>26.08.2015</td><td>Путяевский Лабиринт — 3 этап</td><td><span class="distance-pill fifteen">15 км</span></td><td><b>1:01:34</b></td></tr>
-<tr class="dist-marathon race-marathon"><td>19</td><td>28.06.2015</td><td>26-й Международный марафон «ЭРГО — Белые Ночи»</td><td><span class="distance-pill marathon">марафон</span></td><td><b>3:12:31</b></td></tr>
+<tr class="dist-marathon race-marathon"><td>13</td><td>28.06.2015</td><td>26-й Международный марафон «ЭРГО — Белые Ночи»</td><td><span class="distance-pill marathon">марафон</span></td><td><b>3:12:31</b></td></tr>
+<tr class="dist-10 race-10"><td>14</td><td>18.07.2015</td><td>Московский Марафон: Ночной забег</td><td><span class="distance-pill fifteen">10 км</span></td><td><b>0:39:33</b></td></tr>
+<tr class="dist-15 race-15"><td>15</td><td>22.07.2015</td><td>Путяевский Лабиринт — 2 этап</td><td><span class="distance-pill fifteen">15 км</span></td><td><b>1:13:19</b></td></tr>
+<tr class="dist-half race-half"><td>16</td><td>25.07.2015</td><td>Полумарафон 21andMe</td><td><span class="distance-pill half">полумарафон</span></td><td><b>1:44:31</b></td></tr>
+<tr class="dist-ultra race-ultra"><td>17</td><td>02.08.2015</td><td>Golden Ring 100 Ultra Trail</td><td><span class="distance-pill ultra">30 км</span></td><td><b>2:48:42</b></td></tr>
+<tr class="dist-half race-half"><td>18</td><td>16.08.2015</td><td>Музыкальный полумарафон</td><td><span class="distance-pill half">полумарафон</span></td><td><b>1:23:09</b></td></tr>
+<tr class="dist-15 race-15"><td>19</td><td>26.08.2015</td><td>Путяевский Лабиринт — 3 этап</td><td><span class="distance-pill fifteen">15 км</span></td><td><b>1:01:34</b></td></tr>
 <tr class="dist-marathon race-marathon"><td>20</td><td>20.09.2015</td><td>III Московский марафон</td><td><span class="distance-pill marathon">марафон</span></td><td><b>4:14:04</b></td></tr>
+<tr class="dist-marathon race-marathon"><td>21</td><td>06.12.2015</td><td>XVII Зеленоградский зимний марафон «БиМ»</td><td><span class="distance-pill marathon">марафон</span></td><td><b>3:45:35,11</b></td></tr>
 </tbody></table>
 </section>
 
+<section id="race-map-section" class="race-map-section">
+<h2>Карта забегов</h2>
+<div id="race-map"></div>
+<div class="race-map-note">Точки для отдельных стартов расположены ориентировочно по месту проведения, определённому по названию забега.</div>
+</section>
 </main>
 <script>
 function showYear(year,btn){
@@ -687,6 +702,60 @@ function showYear(year,btn){
   btn.classList.add('active');
   window.scrollTo({top:document.querySelector('.tabs').offsetTop-12,behavior:'smooth'});
 }
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script id="race-map-script">
+const map = L.map('race-map',{scrollWheelZoom:false}).setView([54.8,40.2],5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+L.circleMarker([55.74380, 37.63530], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Международный день птиц</b><br>31.03.2013 · 15 км<br>Результат: <b>1:26:00</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.75580, 37.59930], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Осенний гром</b><br>04.08.2013 · полумарафон<br>Результат: <b>2:18:40</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.76780, 37.65330], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Московский марафон</b><br>15.09.2013 · марафон<br>Результат: <b>4:59:06</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.77070, 37.30250], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Кросс-марафон «Ромашково»</b><br>22.09.2013 · марафон<br>Результат: <b>5:50:37.8</b><br><span style='color:#666'>Ромашково</span></div>").addTo(map);
+L.circleMarker([55.89800, 37.81800], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>37-й Космический марафон</b><br>29.09.2013 · марафон<br>Результат: <b>4:32:42</b><br><span style='color:#666'>Королёв</span></div>").addTo(map);
+L.circleMarker([51.66350, 39.22690], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Воронежский полумарафон</b><br>05.10.2013 · полумарафон<br>Результат: <b>≈1:49:00</b><br><span style='color:#666'>Воронеж</span></div>").addTo(map);
+L.circleMarker([55.90000, 37.48200], {radius:7,color:'#fff',weight:2,fillColor:'#9b45d6',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>30 Miles Camomiles</b><br>12.10.2013 · 50 км<br>Результат: <b>6:05:50</b><br><span style='color:#666'>Московская область</span></div>").addTo(map);
+L.circleMarker([51.54560, 46.07030], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>IV Саратовский полумарафон</b><br>03.11.2013 · полумарафон<br>Результат: <b>1:42:14</b><br><span style='color:#666'>Саратов</span></div>").addTo(map);
+L.circleMarker([56.00600, 37.18100], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Осенний марафон МИЭТ</b><br>10.11.2013 · марафон<br>Результат: <b>4:09:24</b><br><span style='color:#666'>Зеленоград</span></div>").addTo(map);
+L.circleMarker([55.95800, 37.14500], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>XIV Зеленоградский зимний марафон «БиМ»</b><br>07.12.2013 · марафон<br>Результат: <b>4:24:47</b><br><span style='color:#666'>Зеленоград</span></div>").addTo(map);
+L.circleMarker([51.52160, 46.05230], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Саратовский марафон</b><br>22.12.2013 · марафон<br>Результат: <b>4:19:59</b><br><span style='color:#666'>Саратов</span></div>").addTo(map);
+L.circleMarker([55.75580, 37.59930], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Полумарафон «Весенний гром Drum &amp; Race»</b><br>27.04.2014 · полумарафон<br>Результат: <b>2:00:05,18</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.86780, 37.47100], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Полумарафон «Тушинский подъём»</b><br>08.06.2014 · полумарафон<br>Результат: <b>1:48:45</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.81800, 37.65000], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Парковый пробег «Путяевский Лабиринт» — 1 этап</b><br>18.06.2014 · 15 км<br>Результат: <b>1:11:00,1</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.87600, 37.56400], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>XVII Лесной марафон «Белочка»</b><br>13.07.2014 · марафон<br>Результат: <b>4:37:22</b><br><span style='color:#666'>Московская область</span></div>").addTo(map);
+L.circleMarker([55.78200, 37.66800], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Парковый пробег «Путяевский Лабиринт» — 2 этап</b><br>23.07.2014 · 15 км<br>Результат: <b>1:08:44,2</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([51.53360, 46.01630], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>XVII Лесной марафон «Кумысная поляна»</b><br>27.07.2014 · марафон<br>Результат: <b>3:58:07</b><br><span style='color:#666'>Саратов</span></div>").addTo(map);
+L.circleMarker([55.76780, 37.65330], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>I Аткарский марафон</b><br>09.08.2014 · марафон<br>Результат: <b>4:28:07</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.77980, 37.61730], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Музыкальный полумарафон</b><br>17.08.2014 · полумарафон<br>Результат: <b>1:42:53</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.73180, 37.58130], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Марафон «Бег в помощь» в честь 75-летия Чиркова</b><br>24.08.2014 · марафон<br>Результат: <b>3:54:10</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.74380, 37.63530], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Grom 10k</b><br>07.09.2014 · 10 км<br>Результат: <b>0:46:35,68</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.75580, 37.59930], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>We Run Moscow</b><br>14.09.2014 · 10 км<br>Результат: <b>0:42:21</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.76780, 37.65330], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>II Московский марафон</b><br>21.09.2014 · марафон<br>Результат: <b>3:44:39</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.77980, 37.61730], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>5-й Московский полумарафон «Осенний гром»</b><br>05.10.2014 · полумарафон<br>Результат: <b>1:37:02,93</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.57600, 37.26400], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Осенний Святоозёрский марафон</b><br>11.10.2014 · марафон<br>Результат: <b>3:48:13</b><br><span style='color:#666'>Московская область</span></div>").addTo(map);
+L.circleMarker([55.47200, 37.32300], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>2-й легкоатлетический кроссовый марафон «Троицкая осень»</b><br>12.10.2014 · марафон<br>Результат: <b>4:11:23</b><br><span style='color:#666'>Троицк</span></div>").addTo(map);
+L.circleMarker([55.75580, 37.59930], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Полумарафон «ПолуЛось»</b><br>19.10.2014 · полумарафон<br>Результат: <b>1:36:27</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([52.69300, 42.03900], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>III марафон «Мучкап — Шапкино — Любо!»</b><br>03.11.2014 · марафон<br>Результат: <b>3:44:38</b><br><span style='color:#666'>Мучкап, Тамбовская область</span></div>").addTo(map);
+L.circleMarker([56.00600, 37.18100], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Осенний марафон МИЭТ</b><br>16.11.2014 · марафон<br>Результат: <b>3:37:25</b><br><span style='color:#666'>Зеленоград</span></div>").addTo(map);
+L.circleMarker([56.07600, 37.76400], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Pioneer Camp Trail</b><br>18.01.2015 · марафон<br>Результат: <b>4:18:28</b><br><span style='color:#666'>Московская область</span></div>").addTo(map);
+L.circleMarker([55.74380, 37.63530], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Марафон «Титан»</b><br>07.02.2015 · марафон<br>Результат: <b>3:34:26,63</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.85000, 37.43200], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>2-й Мещерский зимний марафон «Зимние узоры»</b><br>21.02.2015 · полумарафон<br>Результат: <b>1:36:08</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.76780, 37.65330], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Lady, run!</b><br>08.03.2015 · полумарафон<br>Результат: <b>1:35:19</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.87400, 37.60000], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Iron Forest Trail</b><br>15.03.2015 · марафон<br>Результат: <b>3:57:22</b><br><span style='color:#666'>Московская область</span></div>").addTo(map);
+L.circleMarker([55.73180, 37.58130], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Keep Calm and Run</b><br>19.04.2015 · полумарафон<br>Результат: <b>1:32:34</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.74380, 37.63530], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Полумарафон «Весенний гром»</b><br>26.04.2015 · полумарафон<br>Результат: <b>1:32:18,60</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([48.70800, 44.49530], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Волгоградский Международный марафон «Победа»</b><br>03.05.2015 · марафон<br>Результат: <b>3:53:16</b><br><span style='color:#666'>Волгоград</span></div>").addTo(map);
+L.circleMarker([55.59350, 36.72750], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Полумарафон в честь 70-летия Великой Победы</b><br>10.05.2015 · полумарафон<br>Результат: <b>1:42:25</b><br><span style='color:#666'>Кубинка</span></div>").addTo(map);
+L.circleMarker([55.72400, 37.50000], {radius:7,color:'#fff',weight:2,fillColor:'#9b45d6',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Сверхмарафон «70 лет Великой Победы»</b><br>23.05.2015 · 70 км<br>Результат: <b>6:54:25</b><br><span style='color:#666'>Московская область</span></div>").addTo(map);
+L.circleMarker([55.73180, 37.58130], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Пробег в честь праздника Святителя Алексия</b><br>31.05.2015 · полумарафон<br>Результат: <b>1:40:03</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.78200, 37.66800], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Путяевский Лабиринт — 1 этап</b><br>17.06.2015 · 15 км<br>Результат: <b>1:01:04</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.75580, 37.59930], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Московский Марафон: Ночной забег</b><br>18.07.2015 · 10 км<br>Результат: <b>0:39:33</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([56.74800, 38.89000], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Путяевский Лабиринт — 2 этап</b><br>22.07.2015 · 15 км<br>Результат: <b>1:13:19</b><br><span style='color:#666'>Переславль-Залесский</span></div>").addTo(map);
+L.circleMarker([55.77980, 37.61730], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Полумарафон 21andMe</b><br>25.07.2015 · полумарафон<br>Результат: <b>1:44:31</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([59.91030, 30.29910], {radius:7,color:'#fff',weight:2,fillColor:'#9b45d6',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Golden Ring 100 Ultra Trail</b><br>02.08.2015 · 30 км<br>Результат: <b>2:48:42</b><br><span style='color:#666'>Санкт-Петербург</span></div>").addTo(map);
+L.circleMarker([55.74380, 37.63530], {radius:7,color:'#fff',weight:2,fillColor:'#3bb44a',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Музыкальный полумарафон</b><br>16.08.2015 · полумарафон<br>Результат: <b>1:23:09</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.75580, 37.59930], {radius:7,color:'#fff',weight:2,fillColor:'#4d8cf5',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>Путяевский Лабиринт — 3 этап</b><br>26.08.2015 · 15 км<br>Результат: <b>1:01:34</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.76780, 37.65330], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>26-й Международный марафон «ЭРГО — Белые Ночи»</b><br>28.06.2015 · марафон<br>Результат: <b>3:12:31</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
+L.circleMarker([55.77980, 37.61730], {radius:7,color:'#fff',weight:2,fillColor:'#f28b22',fillOpacity:.95}).bindPopup("<div style='min-width:210px'><b>III Московский марафон</b><br>20.09.2015 · марафон<br>Результат: <b>4:14:04</b><br><span style='color:#666'>Москва</span></div>").addTo(map);
 </script>
 </body>
 </html>
