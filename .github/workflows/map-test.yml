@@ -14,5 +14,5 @@ jobs:
       - run: npm install playwright
       - run: npx playwright install --with-deps chromium
       - run: python3 -m http.server 8000 >/tmp/map-server.log 2>&1 &
-      - run: cp map-test-v34.html map-test-v35.html && sed -i '/if(starts.length){/,/}/d' map-test-v35.html
+      - run: cp map-test-v34.html map-test-v35.html && sed -i '/if(starts.length){/d' map-test-v35.html
       - run: node map_zoom_test.js
