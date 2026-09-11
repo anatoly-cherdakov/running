@@ -1,0 +1,17 @@
+name: map zoom file test
+on:
+  push:
+    branches: ["map-test-v35"]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm init -y
+      - run: npm install playwright
+      - run: npx playwright install --with-deps chromium
+      - run: cp map-test-v34.html map-test-v35.html && sed -i '/if(starts.length){/d' map-test-v35.html
+      - run: node map_zoom_test_file.js
